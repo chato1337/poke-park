@@ -32,6 +32,7 @@ const PokeDex = () => {
 			>
 				<div className="pokedex">
 					<div className="pokedex__display">
+						<small>pokedex:</small>
 						{pokemonSelected ? (
 							<PokeDexDisplay />
 						) : (
