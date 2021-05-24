@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/poke-park/static/css/main.00e5b03e.chunk.css",
+    "main.js": "/poke-park/static/js/main.3e8de61d.chunk.js",
+    "main.js.map": "/poke-park/static/js/main.3e8de61d.chunk.js.map",
+    "runtime-main.js": "/poke-park/static/js/runtime-main.5b55d238.js",
+    "runtime-main.js.map": "/poke-park/static/js/runtime-main.5b55d238.js.map",
+    "static/js/2.1e53b8c9.chunk.js": "/poke-park/static/js/2.1e53b8c9.chunk.js",
+    "static/js/2.1e53b8c9.chunk.js.map": "/poke-park/static/js/2.1e53b8c9.chunk.js.map",
+    "static/js/3.a253cc45.chunk.js": "/poke-park/static/js/3.a253cc45.chunk.js",
+    "static/js/3.a253cc45.chunk.js.map": "/poke-park/static/js/3.a253cc45.chunk.js.map",
+    "index.html": "/poke-park/index.html",
+    "static/css/main.00e5b03e.chunk.css.map": "/poke-park/static/css/main.00e5b03e.chunk.css.map",
+    "static/js/2.1e53b8c9.chunk.js.LICENSE.txt": "/poke-park/static/js/2.1e53b8c9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5b55d238.js",
+    "static/js/2.1e53b8c9.chunk.js",
+    "static/css/main.00e5b03e.chunk.css",
+    "static/js/main.3e8de61d.chunk.js"
+  ]
+}
