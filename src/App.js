@@ -1,24 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import PokeDex from './components/PokeDex';
+import PokemonList from './components/PokemonList';
+import PokemonState from './context/PokemonState'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <PokemonState>
+        <h1>poke-mondongo</h1>
+        <PokeDex />
+        <PokemonList />
+      </PokemonState>
   );
 }
 
