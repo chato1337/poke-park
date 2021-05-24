@@ -7,6 +7,8 @@ const PokemonList = () => {
     const { 
         getPokemon,
         getPokemons,
+        setShowPokeDex,
+        showPokeDex,
         pokemonList
     } = useContext(PokemonContext);
 
@@ -16,6 +18,7 @@ const PokemonList = () => {
 
     const handleClick = pokemon => {
         getPokemon(pokemon)
+        setShowPokeDex(!showPokeDex)
     }
 
     return (

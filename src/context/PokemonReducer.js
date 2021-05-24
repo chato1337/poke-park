@@ -12,6 +12,11 @@ export default function (state, action) {
                 ...state,
                 pokemonSelected: payload
             }
+        case 'SET_POKEDEX':
+            return {
+                ...state,
+                showPokeDex: payload
+            }
         default:
             return state;
     }

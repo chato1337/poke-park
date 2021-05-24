@@ -2,20 +2,17 @@ import React, {useReducer} from 'react'
 import PokemonReducer from './PokemonReducer'
 import PokemonContext from './PokemonContext'
 import axios from 'axios';
+import PokeApi from '../constants/main_constants'
 
 const PokemonState = (props) => {
     const initialState = {
 			pokemonList: [],
 			pokemonSelected: null,
+            showPokeDex: false
 		};
     const [state, dispatch] = useReducer(PokemonReducer, initialState)
     const getPokemons = async () => {
-        const res = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=50");
-        // let pokeData = []
-        // res.data.results.forEach(async poke => {
-        //     const pokeObj = await axios.get(poke.url)
-        //     pokeData.push(pokeObj.data)
-        // });
+        const res = await axios.get(PokeApi.SHOW_LIST+PokeApi.NUM_LIST);
 
         dispatch({
             type: 'GET_POKEMONS',
@@ -23,7 +20,7 @@ const PokemonState = (props) => {
         })
     }
     const getPokemon = async pokemon => {
-        console.log(pokemon);
+        // console.log(pokemon);
         const res = await axios.get(pokemon.url)
         
         dispatch({
@@ -31,12 +28,21 @@ const PokemonState = (props) => {
             payload: res.data
         })
     };
+
+    const setShowPokeDex = (mustShow) => {
+        dispatch({
+            type: 'SET_POKEDEX',
+            payload: mustShow
+        })
+    }
     return (
         <PokemonContext.Provider value={{ 
             pokemonList: state.pokemonList,
             pokemonSelected: state.pokemonSelected,
+            showPokeDex: state.showPokeDex,
             getPokemon,
-            getPokemons
+            getPokemons,
+            setShowPokeDex
         }}>
             {props.children}
         </PokemonContext.Provider>

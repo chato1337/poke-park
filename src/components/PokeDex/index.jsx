@@ -6,26 +6,28 @@ import PokeApi from '../../constants/main_constants'
 
 const PokeDex = () => {
     const [showHideState, setShowHideState] = useState(false);
-	const {pokemonSelected, getPokemon} = useContext(PokemonContext)
+	const { pokemonSelected, getPokemon, setShowPokeDex, showPokeDex } =
+		useContext(PokemonContext);
 
     const handleClick = () => {
 			setShowHideState(!showHideState);
+			setShowPokeDex(!showPokeDex)
 		};
 
 	const handleRandom = () => {
-		let randomNumber = Math.floor(Math.random()*50)
+		let randomNumber = Math.floor(Math.random()*150)
 		let url = `${PokeApi.SINGLE_POKE}${randomNumber}/`;
 		getPokemon({url: url})
 	}
 
-	const handleNav = (num) => {
+	// const handleNav = (num) => {
 		
-	}
+	// }
 
     return (
 			<div
 				className={
-					showHideState ? "pokedex-container show" : "pokedex-container hide"
+					showPokeDex ? "pokedex-container show" : "pokedex-container hide"
 				}
 			>
 				<div className="pokedex">
@@ -43,7 +45,7 @@ const PokeDex = () => {
 					</div>
 				</div>
 				<div onClick={(e) => handleClick()} className="tab-view">
-					{showHideState ? "hide" : "show"}
+					{showPokeDex ? "hide" : "show"}
 				</div>
 			</div>
 		);
